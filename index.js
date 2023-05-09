@@ -11,6 +11,8 @@ const blogRouter = require("./routes/blogRoute");
 const prodCategoryRouter = require("./routes/prodCategoryRoute");
 const blogCategoryRouter = require("./routes/blogCatRoute");
 const brandRouter = require("./routes/brandRoute");
+const colorRouter = require("./routes/colorRoute");
+const enqRouter = require("./routes/enqRoute");
 const couponRouter = require("./routes/couponRoute");
 const morgan = require("morgan");
 
@@ -32,11 +34,13 @@ app.use("/api/blog", blogRouter);
 app.use("/api/category", prodCategoryRouter);
 app.use("/api/blogcategory", blogCategoryRouter);
 app.use("/api/brand", brandRouter);
+app.use("/api/color", colorRouter);
+app.use("/api/enquiry", enqRouter);
 app.use("/api/coupon", couponRouter);
 
 app.use(notFound);
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-  console.log(`Server is running at PORT ${PORT}`);
+    console.log(`Server is running at PORT ${PORT}`);
 });
